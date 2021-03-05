@@ -1,0 +1,16 @@
+inherit_gem:
+  gnar-style:
+    - rubocop/rubocop_gem.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+
+Layout/LineLength:
+  Max: 120
+  Severity: refactor
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/MutableConstant:
+  Enabled: false
