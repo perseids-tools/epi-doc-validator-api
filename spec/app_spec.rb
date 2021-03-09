@@ -35,9 +35,11 @@ RSpec.describe '/validate' do
     post '/validate/nonexistent', { xml: valid_doc }.to_json, as: :json
 
     expect(last_response).to be_unprocessable
-    expect(JSON.parse(last_response.body)).to match({
-      'error' => /\AVersion nonexistent not supported. Supported versions: \["8",.*"latest"\]\z/
-    })
+    expect(JSON.parse(last_response.body)).to match(
+      {
+        'error' => /\AVersion nonexistent not supported. Supported versions: \["8",.*"latest"\]\z/,
+      },
+    )
   end
 
   it 'returns an error when the JSON is valid but incorrect' do
