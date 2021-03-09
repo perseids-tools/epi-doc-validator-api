@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ['jruby', 'jruby-9.2.9.0']
+        ruby: ['jruby-9.2.11.1']
     name: Ruby ${{ matrix.ruby }} test
     steps:
       - uses: actions/checkout@v2
