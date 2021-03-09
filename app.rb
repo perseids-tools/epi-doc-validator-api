@@ -25,3 +25,7 @@ post '/validate(/:version)?' do
     halt 422, { error: message }.to_json
   end
 end
+
+get '/versions' do
+  settings.validator.versions.to_json
+end
