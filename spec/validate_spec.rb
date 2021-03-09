@@ -19,6 +19,14 @@ RSpec.describe '/validate' do
     ])
   end
 
+  it 'clears the errors before the next request' do
+    post '/validate/', invalid_doc
+    post '/validate/', valid_doc
+
+    expect(last_response).to be_ok
+    expect(JSON.parse(last_response.body)).to eq([])
+  end
+
   it 'validates against a different EpiDoc version' do
     post '/validate/9.1/', valid9
 
