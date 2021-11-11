@@ -20,7 +20,7 @@ post '/validate(/:version)?' do
     settings.validator.errors(request.body.read, version: version).to_json
   else
     message = "Version #{version} not supported. " \
-      "Supported versions: #{settings.validator.versions.inspect}"
+              "Supported versions: #{settings.validator.versions.inspect}"
 
     halt 422, { error: message }.to_json
   end
