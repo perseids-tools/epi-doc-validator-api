@@ -26,7 +26,7 @@ The simplest version would be:
 version: '3'
 services:
   validator:
-    image: perseidsproject/epi-doc-validator-api:v1.0.0
+    image: perseidsproject/epi-doc-validator-api:v1.0.1
     ports:
       - "1600:1600"
 ```
@@ -38,7 +38,7 @@ For example, if you want to run on port 3000:
 version: '3'
 services:
   validator:
-    image: perseidsproject/epi-doc-validator-api:v1.0.0
+    image: perseidsproject/epi-doc-validator-api:v1.0.1
     environment:
       - PORT=3000
     ports:
